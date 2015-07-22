@@ -35,11 +35,16 @@ module Zenodo
     end
 
     def update(body)
-      client.put(member_path, body: body)
+      response = client.put(member_path, body: body)
+      @details = JSON.parse(response)
+
+      self
     end
 
     def delete
       client.delete(member_path)
+
+      true
     end
 
     def metadata
