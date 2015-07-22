@@ -26,7 +26,9 @@ module Zenodo
     end
 
     def retrieve
-      client.get(member_path)
+      @details = fetch_details
+
+      self
     end
 
     def update(body)
@@ -58,14 +60,14 @@ module Zenodo
     end
 
     def details
-      @details ||= retrieve
-    end
-
-    def reload
-      @details = retrieve
+      @details ||= fetch_details
     end
 
     private
+
+    def fetch_details
+      client.get(member_path)
+    end
 
     def member_path
       "#{self.class.collection_path}/#{id}"
