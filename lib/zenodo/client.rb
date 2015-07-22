@@ -24,19 +24,19 @@ module Zenodo
       Zenodo::Deposition.list(self)
     end
 
-    def get(path, opts)
+    def get(path, opts = {})
       perform(path, :get, opts)
     end
 
-    def put(path, opts)
+    def put(path, opts = {})
       perform(path, :put, opts)
     end
 
-    def post(path, opts)
+    def post(path, opts = {})
       perform(path, :post, opts)
     end
 
-    def delete(path, opts)
+    def delete(path, opts = {})
       perform(path, :delete, opts)
     end
 
