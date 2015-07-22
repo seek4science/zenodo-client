@@ -25,8 +25,8 @@ module Zenodo
       client.get(collection_path(deposition))
     end
 
-    def sort(body)
-      client.put(member_path, body: body)
+    def self.sort(client, deposition, order)
+      client.put(collection_path(deposition), body: order)
     end
 
     def retrieve

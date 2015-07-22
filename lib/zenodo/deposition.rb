@@ -53,6 +53,10 @@ module Zenodo
       Zenodo::DepositionFile.new(self, id)
     end
 
+    def sort_files(order)
+      Zenodo::DepositionFile.sort(client, self, order)
+    end
+
     def details
       @details ||= retrieve
     end
