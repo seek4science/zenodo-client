@@ -16,8 +16,8 @@ module Zenodo
       Zenodo::Deposition.new(self, id)
     end
 
-    def create_deposition
-      Zenodo::Deposition.create(self)
+    def create_deposition(body)
+      Zenodo::Deposition.create(self, body)
     end
 
     def list_depositions
@@ -43,11 +43,10 @@ module Zenodo
     private
 
     def perform(path, method, opts = {})
-      if (body = opts.delete(:body))
-        base[access_path(path)].send(method, body, content_type: 'application/json')
-      else
-        base[access_path(path)].send(method)
-      end
+      args = [method]
+      args += [opts.delete(:body).to_json, content_type: opts.delete(:content_type) || :json] if opts[:body]
+
+      base[access_path(path)].send(*args)
     end
 
     def access_path(path)

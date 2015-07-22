@@ -1,40 +1,53 @@
 require 'forwardable'
+require 'json'
 
 module Zenodo
   class DepositionFile
 
     extend Forwardable
 
-    attr_reader :id
+    attr_reader :id, :deposition
     def_delegators :@deposition, :client
 
-    def initialize(deposition, id)
+    def initialize(deposition, id, metadata = nil)
       @deposition = deposition
       @id = id
+      @details = metadata
     end
 
-    def self.create(client, deposition)
-      client.post(self.collection_path(deposition), body: '')
+    def self.create(client, deposition, file)
+      response = client.post(collection_path(deposition), body: file, content_type: 'multipart/form-data')
+      hash = JSON.parse(response)
+      new(deposition, hash['id'], hash)
     end
 
     def self.list(client, deposition)
-      client.get(self.collection_path(deposition))
+      client.get(collection_path(deposition))
     end
 
-    def sort
-      client.put(member_path, body: '')
+    def sort(body)
+      client.put(member_path, body: body)
     end
 
     def retrieve
-      client.get(member_path)
+      response = client.get(member_path)
+      JSON.parse(response)
     end
 
-    def update
-      client.put(member_path, body: '')
+    def update(body)
+      client.put(member_path, body: body)
     end
 
     def delete
       client.delete(member_path)
+    end
+
+    def metadata
+      @details ||= retrieve
+    end
+
+    def reload
+      @details = retrieve
     end
 
     private
