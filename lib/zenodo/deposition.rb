@@ -16,11 +16,16 @@ module Zenodo
     def self.create(client, body)
       response = client.post(collection_path, body: body)
       hash = JSON.parse(response)
+
       new(client, hash['id'], hash)
     end
 
     def self.list(client)
-      client.get(collection_path)
+      response = client.get(collection_path)
+
+      JSON.parse(response).map do |deposition|
+        new(client, deposition['id'], deposition)
+      end
     end
 
     def retrieve
@@ -41,8 +46,8 @@ module Zenodo
       true
     end
 
-    def create_file(body)
-      Zenodo::DepositionFile.create(client, self, body)
+    def create_file(file)
+      Zenodo::DepositionFile.create(client, self, file)
     end
 
     def list_files

@@ -18,11 +18,16 @@ module Zenodo
     def self.create(client, deposition, file)
       response = client.post(collection_path(deposition), body: file, content_type: 'multipart/form-data')
       hash = JSON.parse(response)
+
       new(deposition, hash['id'], hash)
     end
 
     def self.list(client, deposition)
-      client.get(collection_path(deposition))
+      response = client.get(collection_path(deposition))
+
+      JSON.parse(response).map do |deposition_file|
+        new(deposition, deposition_file['id'], deposition_file)
+      end
     end
 
     def self.sort(client, deposition, order)
