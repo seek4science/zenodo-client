@@ -52,7 +52,7 @@ module Zenodo
       true
     end
 
-    def metadata
+    def details
       @details ||= retrieve
     end
 
