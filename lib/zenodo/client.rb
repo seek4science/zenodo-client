@@ -46,7 +46,9 @@ module Zenodo
       args = [method]
       args += [opts.delete(:body).to_json, content_type: opts.delete(:content_type) || :json] if opts[:body]
 
-      base[access_path(path)].send(*args)
+      response = base[access_path(path)].send(*args)
+
+      JSON.parse(response)
     end
 
     def access_path(path)

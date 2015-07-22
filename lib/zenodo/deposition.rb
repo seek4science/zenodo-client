@@ -14,28 +14,23 @@ module Zenodo
     end
 
     def self.create(client, body)
-      response = client.post(collection_path, body: body)
-      hash = JSON.parse(response)
+      hash = client.post(collection_path, body: body)
 
       new(client, hash['id'], hash)
     end
 
     def self.list(client)
-      response = client.get(collection_path)
-
-      JSON.parse(response).map do |deposition|
+      client.get(collection_path).map do |deposition|
         new(client, deposition['id'], deposition)
       end
     end
 
     def retrieve
-      response = client.get(member_path)
-      JSON.parse(response)
+      client.get(member_path)
     end
 
     def update(body)
-      response = client.put(member_path, body: body)
-      @details = JSON.parse(response)
+      @details = client.put(member_path, body: body)
 
       self
     end

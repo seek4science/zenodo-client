@@ -16,18 +16,13 @@ module Zenodo
     end
 
     def self.create(client, deposition, file)
-      response = client.post(collection_path(deposition), body: file, content_type: 'multipart/form-data')
-      hash = JSON.parse(response)
+      hash = client.post(collection_path(deposition), body: file, content_type: 'multipart/form-data')
 
       new(deposition, hash['id'], hash)
     end
 
     def self.list(client, deposition)
-      response = client.get(collection_path(deposition))
-
-      JSON.parse(response).map do |deposition_file|
-        new(deposition, deposition_file['id'], deposition_file)
-      end
+      from_list(client.get(collection_path(deposition)))
     end
 
     def self.sort(client, deposition, order)
@@ -36,17 +31,15 @@ module Zenodo
         { id: ob.to_s }
       end
 
-      client.put(collection_path(deposition), body: order)
+      from_list(client.put(collection_path(deposition), body: order))
     end
 
     def retrieve
-      response = client.get(member_path)
-      JSON.parse(response)
+      client.get(member_path)
     end
 
     def update(body)
-      response = client.put(member_path, body: body)
-      @details = JSON.parse(response)
+      @details = client.put(member_path, body: body)
 
       self
     end
@@ -77,6 +70,12 @@ module Zenodo
 
     def self.collection_path(deposition)
       "#{deposition.member_path}/files"
+    end
+
+    def self.from_list(list)
+      list.map do |deposition_file|
+        new(deposition, deposition_file['id'], deposition_file)
+      end
     end
 
   end
