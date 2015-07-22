@@ -26,6 +26,11 @@ module Zenodo
     end
 
     def self.sort(client, deposition, order)
+      order.map! do |ob|
+        ob = ob.id if ob.is_a?(Zenodo::DepositionFile)
+        { id: ob.to_s }
+      end
+
       client.put(collection_path(deposition), body: order)
     end
 
