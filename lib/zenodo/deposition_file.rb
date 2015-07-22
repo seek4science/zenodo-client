@@ -1,8 +1,12 @@
+require 'forwardable'
+
 module Zenodo
   class DepositionFile
 
+    extend Forwardable
+
     attr_reader :id
-    delegate :client, to: @deposition
+    def_delegators :@deposition, :client
 
     def initialize(deposition, id)
       @deposition = deposition
