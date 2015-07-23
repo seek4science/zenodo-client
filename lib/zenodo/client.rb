@@ -16,7 +16,7 @@ module Zenodo
       Zenodo::Deposition.new(self, id)
     end
 
-    def create_deposition(body)
+    def create_deposition(body = {})
       Zenodo::Deposition.create(self, body)
     end
 
