@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://zenodo.org/api/deposit/depositions/38762/files?access_token=notarealaccesstoken
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Jul 2015 13:32:34 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '136'
+      Content-Type:
+      - application/json
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAzXLTQoCMQxA4asMWVtpY//iVUQkkzZYtG7GEVS8u1Rw+/je
+        4Q2twH4CzCkquWqix2S8WDJziGo0ECpb9YQMmwnkXOWyrH08XCzPLqeCtCOX
+        XLbofc4iHJITZ4fXdq1Le9Xhg/+XG/dfKWvvz1PhO29lecDn+AWJt2xFkAAA
+        AA==
+    http_version: 
+  recorded_at: Thu, 23 Jul 2015 13:32:34 GMT
+recorded_with: VCR 2.9.3

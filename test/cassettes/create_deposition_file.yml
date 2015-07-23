@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://zenodo.org/api/deposit/depositions/38762/files?access_token=notarealaccesstoken
+    body:
+      encoding: ASCII-8BIT
+      string: "--715452\r\nContent-Disposition: form-data; name=\"file\"; filename=\"dummy_data.csv\"\r\nContent-Type:
+        text/comma-separated-values\r\n\r\nid,title,description\n1,Hello World,How
+        are you doing?\n\r\n--715452--\r\n"
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - multipart/form-data; boundary=715452
+      Content-Length:
+      - '195'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Thu, 23 Jul 2015 13:30:23 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '133'
+      Content-Type:
+      - application/json
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAzXLTQoCMQxA4asMWVtpY//iZSSTNli0buoIKt5dKrh9fO8N
+        rcBxAcwpKrlqosdkvFgya4hqNBAqW/WEDLsF5FzlMrY+Hy6WV5dTQTqQSy5b
+        9D5nEQ7JibPTa7vW0V51+uD/5cb9V8rW+/NU+M57GQ/4fAHHUNpZjgAAAA==
+    http_version: 
+  recorded_at: Thu, 23 Jul 2015 13:30:24 GMT
+recorded_with: VCR 2.9.3

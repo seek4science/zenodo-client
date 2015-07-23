@@ -1,0 +1,18 @@
+language: ruby
+
+sudo: false
+
+cache: bundler
+
+rvm:
+  - 2.1.6
+
+script:
+  - RAILS_ENV=test bundle exec rake test
+
+notifications:
+  email:
+    recipients:
+      - finn.bacall@manchester.ac.uk
+    on_failure: change
+    on_success: never
