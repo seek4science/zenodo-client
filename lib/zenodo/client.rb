@@ -43,12 +43,17 @@ module Zenodo
     private
 
     def perform(path, method, opts = {})
+      content_type = opts.delete(:content_type) || :json
+      body = opts.delete(:body)
       args = [method]
-      args += [opts.delete(:body).to_json, content_type: opts.delete(:content_type) || :json] if opts[:body]
+      if body
+        body = body.to_json if content_type == :json
+        args += [body, content_type: content_type]
+      end
 
       response = base[access_path(path)].send(*args)
 
-      JSON.parse(response)
+      JSON.parse(response) unless response.empty?
     end
 
     def access_path(path)
