@@ -56,6 +56,14 @@ module Zenodo
       @details ||= fetch_details
     end
 
+    def member_path
+      "#{self.class.collection_path(deposition)}/#{id}"
+    end
+
+    def self.collection_path(deposition)
+      "#{deposition.member_path}/files"
+    end
+
     private
 
     def fetch_details
@@ -64,14 +72,6 @@ module Zenodo
 
     def deposition_id
       @deposition.id
-    end
-
-    def member_path
-      "#{self.class.collection_path(deposition)}/#{id}"
-    end
-
-    def self.collection_path(deposition)
-      "#{deposition.member_path}/files"
     end
 
     def self.from_list(list)

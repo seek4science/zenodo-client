@@ -63,18 +63,18 @@ module Zenodo
       @details ||= fetch_details
     end
 
-    private
-
-    def fetch_details
-      client.get(member_path)
-    end
-
     def member_path
       "#{self.class.collection_path}/#{id}"
     end
 
     def self.collection_path
       PATH
+    end
+
+    private
+
+    def fetch_details
+      client.get(member_path)
     end
 
   end
