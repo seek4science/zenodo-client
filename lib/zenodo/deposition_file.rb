@@ -24,7 +24,7 @@ module Zenodo
     end
 
     def self.list(client, deposition)
-      from_list(client.get(collection_path(deposition)))
+      from_list(deposition, client.get(collection_path(deposition)))
     end
 
     def self.sort(client, deposition, order)
@@ -33,7 +33,7 @@ module Zenodo
         { id: ob.to_s }
       end
 
-      from_list(client.put(collection_path(deposition), body: order))
+      from_list(deposition, client.put(collection_path(deposition), body: order))
     end
 
     def retrieve
@@ -76,7 +76,7 @@ module Zenodo
       @deposition.id
     end
 
-    def self.from_list(list)
+    def self.from_list(deposition, list)
       list.map do |deposition_file|
         new(deposition, deposition_file['id'], deposition_file)
       end
