@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://zenodo.org/api/deposit/depositions/38762/files?access_token=notarealaccesstoken
+    uri: https://sandbox.zenodo.org/api/deposit/depositions/38762/files?access_token=notarealaccesstoken
     body:
       encoding: ASCII-8BIT
       string: "--715452\r\nContent-Disposition: form-data; name=\"file\"; filename=\"dummy_data.csv\"\r\nContent-Type:

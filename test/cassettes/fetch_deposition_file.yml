@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://zenodo.org/api/deposit/depositions/38762/files/2876f91e-6427-4c09-b56f-f592fa0f492a?access_token=notarealaccesstoken
+    uri: https://sandbox.zenodo.org/api/deposit/depositions/38762/files/2876f91e-6427-4c09-b56f-f592fa0f492a?access_token=notarealaccesstoken
     body:
       encoding: US-ASCII
       string: ''

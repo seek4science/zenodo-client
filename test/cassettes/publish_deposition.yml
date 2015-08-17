@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.zenodo.org/api/deposit/depositions/1028/actions/publish?access_token=notarealaccesstoken
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - ''
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 202
+      message: ACCEPTED
+    headers:
+      Date:
+      - Mon, 17 Aug 2015 09:33:19 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Sentry-Id:
+      - None
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '664'
+      Content-Type:
+      - application/json
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA31U226jMBD9lYjXXRKbSwio6sM+7Bf0bbVCxh6IW7CRbdqm
+        Uf99PUASkmaLIqEcz+Wc4xmOQS1bsEGx+nMMpPDvAFIaZTvOQpEnVZjUPA3z
+        NEvCLdvmhFeCp2kW/FwFfA/8xQ4d5rCtiGuSkijPI1pHuzznVSwq2EUV8U+F
+        8WMj+QEYn0Tp7oQp1o1YDBFlkJKQck5DQuM4FDWJQ7IjJMqyOMmJWAvmgs+/
+        2N0AczASjghNfVRIkicaFZQU6fYHIQUh2MFJ147l2cqBdSu3l6rBg04LWcvr
+        CjR7InkRx0VELxXsUHXSTb2cGQAh53tjotAKMEa/KTAeSHL/Z7SRkmiHXcAx
+        z5l55BhAVzHT6FJM2WpoW1SilTOyGpw24z2gup4Zp+vyRH6OfNaDUawtX3U7
+        dAu8MUy5c66BGgwoDmfkBQ5v2ohL9aFqJWdOalW6Qz8q+dYr2bEGrkJngr3H
+        7ZWUuXc5mPaCu72/eVvaoQfzKu1CqOx6I5Urpa3UJd5b/gzcfYnqW8bv+CGt
+        HRYw4167LY1s9g758lZbf3vX/Bg3Wh26u9xvbBdguZE92oXlHvpH0Vj/ax42
+        /WOw4HGTN/PwhYXE5IVRQ99qJs6O4oRYcBPFrhuUj4e71zWPzmLmb3TdWDSu
+        yez3MdCGTzuOSaz22yfZSRZCp1X8xTjD9N9SKcQbNWVNm3dpZr0+ZIXTsPBL
+        S4ymZJ2SLNp8gNJCr2OaYymvBJRdMFTajVKDpZP/nys0YHFyngz0yO7HJfya
+        NPO8nBlo8etRSgHK4WdgnsjP8Yz7ZSlHozzpCzKNdLB3rrfFZmOZEpV+X8/6
+        tGk2U+BmlvqtD/5wWdDXE+9rD4517qR8/gOqaOeGqgUAAA==
+    http_version: 
+  recorded_at: Mon, 17 Aug 2015 09:33:21 GMT
+recorded_with: VCR 2.9.3

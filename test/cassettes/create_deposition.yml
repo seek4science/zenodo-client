@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://zenodo.org/api/deposit/depositions?access_token=notarealaccesstoken
+    uri: https://sandbox.zenodo.org/api/deposit/depositions?access_token=notarealaccesstoken
     body:
       encoding: UTF-8
       string: "{}"
