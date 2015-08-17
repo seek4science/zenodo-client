@@ -63,12 +63,46 @@ module Zenodo
       @details ||= fetch_details
     end
 
-    def member_path
-      "#{self.class.collection_path}/#{id}"
+    def publish
+      @details = client.post(publish_action_path, '')
+
+      true
+    end
+
+    def unlock
+      @details = client.post(edit_action_path, '')
+
+      true
+    end
+
+    def discard
+      @details = client.post(discard_action_path, '')
+
+      true
     end
 
     def self.collection_path
       PATH
+    end
+
+    def member_path
+      "#{self.class.collection_path}/#{id}"
+    end
+
+    def publish_action_path
+      "#{member_path}/actions/publish"
+    end
+
+    def edit_action_path
+      "#{member_path}/actions/edit"
+    end
+
+    def discard_action_path
+      "#{member_path}/actions/discard"
+    end
+
+    def published?
+      details['submitted']
     end
 
     private
