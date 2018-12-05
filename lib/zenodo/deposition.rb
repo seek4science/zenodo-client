@@ -64,19 +64,19 @@ module Zenodo
     end
 
     def publish
-      @details = client.post(publish_action_path, '')
+      @details = client.post(publish_action_path)
 
       true
     end
 
     def unlock
-      @details = client.post(edit_action_path, '')
+      @details = client.post(edit_action_path)
 
       true
     end
 
     def discard
-      @details = client.post(discard_action_path, '')
+      @details = client.post(discard_action_path)
 
       true
     end

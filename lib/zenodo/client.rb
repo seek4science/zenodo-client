@@ -32,7 +32,7 @@ module Zenodo
       perform(path, :put, opts)
     end
 
-    def post(path, opts = {})
+    def post(path, opts = { body: '' })
       perform(path, :post, opts)
     end
 
@@ -48,7 +48,11 @@ module Zenodo
       args = [method]
       if body
         body = body.to_json if content_type == :json
-        args += [body, content_type: content_type]
+        if content_type == :multipart
+          args += [body]
+        else
+          args += [body, content_type: content_type]
+        end
       end
 
       response = base[access_path(path)].send(*args)

@@ -32,7 +32,7 @@ class ClientTest < Test::Unit::TestCase
       deposition = @client.create_deposition
 
       assert deposition.is_a?(Zenodo::Deposition)
-      assert deposition.id.is_a?(Fixnum)
+      assert deposition.id.is_a?(Integer)
       assert deposition.details.is_a?(Hash)
     end
   end
@@ -42,7 +42,7 @@ class ClientTest < Test::Unit::TestCase
       deposition = @client.deposition(38762)
 
       assert deposition.is_a?(Zenodo::Deposition)
-      assert deposition.id.is_a?(Fixnum)
+      assert deposition.id.is_a?(Integer)
       assert deposition.details.is_a?(Hash)
     end
   end

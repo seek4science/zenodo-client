@@ -17,8 +17,8 @@ module Zenodo
 
     def self.create(client, deposition, file)
       hash = client.post(collection_path(deposition),
-                         body: {file: file},
-                         content_type: 'multipart/form-data')
+                         body: { file: file },
+                         content_type: :multipart)
 
       new(deposition, hash['id'], hash)
     end
