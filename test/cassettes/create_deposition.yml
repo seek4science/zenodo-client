@@ -30,25 +30,13 @@ http_interactions:
       - max-age=31536000
       Vary:
       - Accept-Encoding,User-Agent
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '423'
+      - '1028'
       Content-Type:
       - application/json
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA41T207DMAz9FdRXQOo2bUP7Dt4QitLG7Qy5yU6GJsS/k3Tt
-        mpU98Fjbx+fi5rvqUANXh4e396eHqiWQAVT6rNb1avtc75/Xm9fV5lDvDuv6
-        sa4PdV2luYBBQ57KH8Yp7PAfKI6NwXDZ30nNkGshEWYkWk+uJ2DOo+7LAqXy
-        arvbbdM3ZszmZb9bZ0IIUskgU+m7AtNI6p1Qlz02ap2NOBsImxgcXc15ScF1
-        YtI+Tn64SFZqcXI6mqLek7ThiiXogMC2c1SfcP5ypObtsdHYyoDOinD213TQ
-        eEIbxNDn4+BqpFgoQSN7uMGOin2qczl32Yjc2GLZERhZcPRAJ+TCd8piFC8i
-        6RmRzvEB7ezxqlTL9k5AyByLsmxTGCwI+2O4yX3iki05ezZ3ewvnCrgl9Dm7
-        v7yL2ZE3LVOYAUUw0Wsn1ZTgWPSUODllAkI5LNUYE21aUUZbHvHPDzWJX+RT
-        dDgpy9B8t8LdQDscNC0HywXYujDwD93J8eLeBUHWVHbyc71/6VHKPEug89MW
-        qMCG/F5H2M/PLw/M3fIEBAAA
+      encoding: UTF-8
+      string: '{"files": [], "created": "2015-07-23T13:06:20+00:00", "title": "", "modified": "2015-07-23T13:06:20+00:00", "submitted": false, "state": "inprogress", "owner": 15665, "id": 38762, "metadata": {"embargo_date": null, "contributors": [], "partof_title": null, "journal_volume": null, "grants": [], "references": [], "keywords": [], "publication_type": "", "imprint_publisher": null, "title": null, "image_type": "", "partof_pages": null, "imprint_isbn": null, "thesis_supervisors": [], "conference_url": null, "subjects": [], "imprint_place": null, "journal_issue": null, "access_right": null, "conference_acronym": null, "conference_title": null, "description": null, "journal_title": null, "access_conditions": null, "upload_type": null, "prereserve_doi": null, "communities": null, "publication_date": null, "conference_place": null, "conference_session_part": null, "doi": "", "license": null, "notes": "", "journal_pages": null, "conference_dates": null, "creators": [], "conference_session": null, "related_identifiers": []}}'
     http_version: 
   recorded_at: Thu, 23 Jul 2015 13:06:20 GMT
 recorded_with: VCR 2.9.3

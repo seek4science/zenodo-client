@@ -26,19 +26,13 @@ http_interactions:
       - max-age=31536000
       Vary:
       - Accept-Encoding,User-Agent
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '136'
+      - '144'
       Content-Type:
       - application/json
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAzXLTQoCMQxA4asMWVtpY//iVUQkkzZYtG7GEVS8u1Rw+/je
-        4Q2twH4CzCkquWqix2S8WDJziGo0ECpb9YQMmwnkXOWyrH08XCzPLqeCtCOX
-        XLbofc4iHJITZ4fXdq1Le9Xhg/+XG/dfKWvvz1PhO29lecDn+AWJt2xFkAAA
-        AA==
+      encoding: UTF-8
+      string: '[{"id": "2876f91e-6427-4c09-b56f-f592fa0f492a", "checksum": "ad0ab187d29391718024488cca571c10", "filesize": "54", "filename": "dummy_data.csv"}]'
     http_version: 
   recorded_at: Thu, 23 Jul 2015 13:32:34 GMT
 recorded_with: VCR 2.9.3

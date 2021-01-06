@@ -32,30 +32,13 @@ http_interactions:
       - None
       Vary:
       - Accept-Encoding,User-Agent
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '664'
+      - '1450'
       Content-Type:
       - application/json
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA31U226jMBD9lYjXXRKbSwio6sM+7Bf0bbVCxh6IW7CRbdqm
-        Uf99PUASkmaLIqEcz+Wc4xmOQS1bsEGx+nMMpPDvAFIaZTvOQpEnVZjUPA3z
-        NEvCLdvmhFeCp2kW/FwFfA/8xQ4d5rCtiGuSkijPI1pHuzznVSwq2EUV8U+F
-        8WMj+QEYn0Tp7oQp1o1YDBFlkJKQck5DQuM4FDWJQ7IjJMqyOMmJWAvmgs+/
-        2N0AczASjghNfVRIkicaFZQU6fYHIQUh2MFJ147l2cqBdSu3l6rBg04LWcvr
-        CjR7InkRx0VELxXsUHXSTb2cGQAh53tjotAKMEa/KTAeSHL/Z7SRkmiHXcAx
-        z5l55BhAVzHT6FJM2WpoW1SilTOyGpw24z2gup4Zp+vyRH6OfNaDUawtX3U7
-        dAu8MUy5c66BGgwoDmfkBQ5v2ohL9aFqJWdOalW6Qz8q+dYr2bEGrkJngr3H
-        7ZWUuXc5mPaCu72/eVvaoQfzKu1CqOx6I5Urpa3UJd5b/gzcfYnqW8bv+CGt
-        HRYw4167LY1s9g758lZbf3vX/Bg3Wh26u9xvbBdguZE92oXlHvpH0Vj/ax42
-        /WOw4HGTN/PwhYXE5IVRQ99qJs6O4oRYcBPFrhuUj4e71zWPzmLmb3TdWDSu
-        yez3MdCGTzuOSaz22yfZSRZCp1X8xTjD9N9SKcQbNWVNm3dpZr0+ZIXTsPBL
-        S4ymZJ2SLNp8gNJCr2OaYymvBJRdMFTajVKDpZP/nys0YHFyngz0yO7HJfya
-        NPO8nBlo8etRSgHK4WdgnsjP8Yz7ZSlHozzpCzKNdLB3rrfFZmOZEpV+X8/6
-        tGk2U+BmlvqtD/5wWdDXE+9rD4517qR8/gOqaOeGqgUAAA==
+      encoding: UTF-8
+      string: '{"files": [{"id": "e51278ca-d94b-4fc5-9574-6a690cbdc557", "checksum": "a6d3f05029921f2899cb3dbe82b0000b", "filesize": "4258", "filename": "3e21ae50-1cc1-0133-df03-08002773490d.dat"}], "created": "2015-08-04T12:10:56+00:00", "title": "a test thing", "modified": "2015-08-17T09:33:21+00:00", "submitted": true, "state": "done", "owner": 49, "id": 1028, "metadata": {"embargo_date": null, "contributors": [], "partof_title": null, "journal_volume": null, "grants": [], "references": [], "keywords": [], "publication_type": "", "title": "a test thing", "image_type": "", "partof_pages": null, "conference_url": null, "thesis_supervisors": [], "imprint_isbn": null, "subjects": [], "imprint_place": null, "journal_issue": null, "access_right": "closed", "conference_acronym": null, "conference_title": null, "description": "<p>dgsdgsg</p>", "journal_title": null, "access_conditions": null, "upload_type": "dataset", "communities": [], "publication_date": "2015-08-04", "conference_place": null, "creators": [{"orcid": "", "affiliation": "", "name": "Bacall, Finn", "gnd": ""}], "conference_session_part": null, "doi": "10.5072/zenodo.319", "license": null, "notes": "", "journal_pages": null, "conference_dates": null, "imprint_publisher": null, "conference_session": null, "related_identifiers": []}, "record_id": 319, "record_url": "https://sandbox.zenodo.org/record/319", "doi": "10.5072/zenodo.319", "doi_url": "http://dx.doi.org/10.5072/zenodo.319"}'
     http_version: 
   recorded_at: Mon, 17 Aug 2015 09:33:21 GMT
 recorded_with: VCR 2.9.3
